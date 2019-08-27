@@ -4,30 +4,26 @@ import com.cs.consoledrawing.exception.InvalidInputException;
 
 public class CommandFactory {
 
-    public static Command createCommand(String commandKey, String[] args) throws InvalidInputException {
-        Command command = null;
+    public static DrawingCommand createCommand(String commandKey, String[] args) throws InvalidInputException {
+        DrawingCommand drawingCommand = null;
 
         switch(commandKey){
-            case "C":
-                command = new CreateCanvasCommand(args);
-                break;
-
             case "L":
-                command = new DrawLineCommand(args);
+                drawingCommand = new DrawLineDrawingCommand(args);
                 break;
 
             case "R":
-                command = new DrawRectangleCommand(args);
+                drawingCommand = new DrawRectangleDrawingCommand(args);
                 break;
 
             case "B":
-                command = new BucketFillCommand(args);
+                drawingCommand = new BucketFillDrawingCommand(args);
                 break;
 
             default:
                 break;
         }
 
-        return command;
+        return drawingCommand;
     }
 }

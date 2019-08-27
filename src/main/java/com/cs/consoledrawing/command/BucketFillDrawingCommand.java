@@ -3,11 +3,11 @@ package com.cs.consoledrawing.command;
 import com.cs.consoledrawing.exception.InvalidInputException;
 import com.cs.consoledrawing.model.Canvas;
 
-public class BucketFillCommand implements Command {
+public class BucketFillDrawingCommand implements DrawingCommand {
     private int x1, y1;
     private char color;
 
-    public BucketFillCommand(String[] args) throws InvalidInputException {
+    public BucketFillDrawingCommand(String[] args) throws InvalidInputException {
         // request validation
         if (args.length != 3)
         {

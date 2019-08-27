@@ -2,18 +2,11 @@ package com.cs.consoledrawing.model;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.Arrays;
 
 public class Canvas {
-    private final Logger log = LoggerFactory.getLogger(getClass());
-
     private char [][] board;
     private int width, height;
-
-    public Canvas() {
-        board = new char[0][0];
-    }
 
     public Canvas(int width, int height)
     {
@@ -27,12 +20,6 @@ public class Canvas {
         this.height = other.height;
         this.width = other.width;
         this.board = Arrays.stream(other.board).map(r -> r.clone()).toArray(char[][]::new);
-    }
-
-    public void setCanvas(Canvas canvas){
-        this.board = canvas.board;
-        this.width = canvas.width;
-        this.height = canvas.height;
     }
 
     public int getWidth() {
